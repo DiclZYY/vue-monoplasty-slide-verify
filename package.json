@@ -1,6 +1,6 @@
 {
   "name": "vue-slide-verify",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "vue slide verify",
   "author": "dicl <798360941@qq.com>",
   "main": "dist/slide-verify.js",

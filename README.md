@@ -91,9 +91,3 @@ Vue.use(SlideVerify);
 |  fail   | Function |      fail callback      |
 | refresh | Function | refresh button callback |
 
-
-## Log
-<!-- ### v1.0.3
-- Expose more props -->
-### V1.0.2
-- Mobile terminal touch event support
