@@ -1,6 +1,6 @@
-# vue-c-slide-verify
+# vue-slide-verify
 
-> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-cc-slide-verify/)
+> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-slide-verify/) modified from [monoplasty/vue-monoplasty-slide-verify](https://github.com/monoplasty/vue-monoplasty-slide-verify)
 
 ## Build Setup
 
@@ -16,17 +16,17 @@ npm run build
 ```
 ## Quick Start
 
-###  1. Import vue-monoplasty-slide-verify into your vue.js project.
+###  1. Import vue-slide-verify into your vue.js project.
 
 Using build tools:
 
 ```bash
-npm install --save vue-monoplasty-slide-verify
+npm install --save vue-slide-verify
 ```
 
 ```js
 import Vue from 'vue';
-import SlideVerify from 'vue-monoplasty-slide-verify';
+import SlideVerify from 'vue-slide-verify';
 
 Vue.use(SlideVerify);
 ```
