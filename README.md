@@ -1,6 +1,6 @@
-# vue-monoplasty-slide-verify
+# vue-c-slide-verify
 
-> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-monoplasty-slide-verify/)
+> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-cc-slide-verify/)
 
 ## Build Setup
 
