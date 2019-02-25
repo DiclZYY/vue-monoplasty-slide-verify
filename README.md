@@ -1,6 +1,6 @@
 # vue-slide-verify
 
-> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-slide-verify/) modified from [monoplasty/vue-monoplasty-slide-verify](https://github.com/monoplasty/vue-monoplasty-slide-verify)
+> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-slide-verify/),modified from [monoplasty/vue-monoplasty-slide-verify](https://github.com/monoplasty/vue-monoplasty-slide-verify)
 
 ## Build Setup
 
@@ -34,14 +34,7 @@ Vue.use(SlideVerify);
 ### 2. Now you have it. The simplest usage:
 
 ```html
-<slide-verify :l="42"
-            :r="10"
-            :w="310"
-            :h="155"
-            @success="onSuccess"
-            @fail="onFail"
-            @refresh="onRefresh"
-            ></slide-verify>
+<slide-verify :l="42" :r="10" :w="310" :h="155" @success="onSuccess" @fail="onFail" @refresh="onRefresh"></slide-verify>
 <div>{{msg}}</div>
 ```
 
@@ -67,26 +60,40 @@ export default {
     }
 ```
 
+### Integrate in you project,you shoul import it like this:
+
+```js
+import Vue from 'vue';
+import SlideVerify from 'vue-slide-verify/src/lib';
+
+Vue.use(SlideVerify);
+```
+
 ## Document
 
-### argument
+### Props
 
-| Param | Type | Describe |
-| :------: | :------: | :------: |
-| l | Number | block length |
-| r | Number | block circle radius |
-| w | Number | canvas width |
-| h | Number | canvas height |
+|    Param    |  Type  |                                   Describe                                    |
+| :---------: | :----: | :---------------------------------------------------------------------------: |
+|      l      | Number |                                 block length                                  |
+|      r      | Number |                              block circle radius                              |
+|      w      | Number |                                 canvas width                                  |
+|      h      | Number |                                 canvas height                                 |
+|    text     | String |                the tips,default value is 'slide filled right'                 |
+| successText | String |    tips after verifing successfully,defaut value is 'verify successfully'     |
+|   imgUrl    | String | the url fetching img,default value is 'https://picsum.photos/300/150/?image=' |
 
-### callBack
+### Events
 
-| Event | Type | Describe |
-| :------: | :------: | :------: |
-| success | Function | success callback |
-| fail | Function | fail callback |
+|  Event  |   Type   |        Describe         |
+| :-----: | :------: | :---------------------: |
+| success | Function |    success callback     |
+|  fail   | Function |      fail callback      |
 | refresh | Function | refresh button callback |
 
 
 ## Log
+<!-- ### v1.0.3
+- Expose more props -->
 ### V1.0.2
 - Mobile terminal touch event support

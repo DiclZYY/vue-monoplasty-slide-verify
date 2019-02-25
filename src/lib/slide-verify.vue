@@ -6,6 +6,7 @@
         <!-- container -->
         <div class="slide-verify-slider" :class="{'container-active': containerActive, 'container-success': containerSuccess, 'container-fail': containerFail}">
             <div class="slide-verify-slider-mask" :style="{width: sliderMaskWidth}">
+                <span v-if="containerSuccess">{{verifySuccessText}}</span>
                 <!-- slider -->
                 <div @mousedown="sliderDown"
                     @touchstart="touchStartEvent"
@@ -52,6 +53,21 @@
             h: {
                 type: Number,
                 default: 155,
+            },
+            //tips
+            text:{
+                type:String,
+                default:'Slide filled right',
+            },
+            //verify successful text
+            successText:{
+                type:String,
+                default:'Verify successfully',
+            },
+            //the url fetching image.
+            imgUrl:{
+                type:String,
+                default:'https://picsum.photos/300/150/?image='
             }
         },
         data() {
@@ -59,7 +75,8 @@
                 containerActive: false, // container active class
                 containerSuccess: false, // container success class
                 containerFail: false, // container fail class
-                sliderText: 'Slide filled right',
+                sliderText: this.text,
+                verifySuccessText:this.successText,//success text
                 canvasCtx: null,
                 blockCtx: null,
                 block: null,
@@ -146,7 +163,7 @@
             },
             // 随机生成img src
             getRandomImg() {
-                return 'https://picsum.photos/300/150/?image=' + this.getRandomNumberByRange(0, 1084);
+                return this.imgUrl + this.getRandomNumberByRange(0, 1084);
                 // return require('../assets/img.jpg')
             },
             getRandomNumberByRange(start, end) {
