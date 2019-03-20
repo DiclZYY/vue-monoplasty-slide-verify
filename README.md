@@ -1,72 +1,38 @@
 # vue-slide-verify
 
-> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-slide-verify/),modified from [monoplasty/vue-monoplasty-slide-verify](https://github.com/monoplasty/vue-monoplasty-slide-verify)
+> A Vue plugin to slide verify [Demo](https://monoplasty.github.io/vue-slide-verify/),forked from [monoplasty/vue-monoplasty-slide-verify](https://github.com/monoplasty/vue-monoplasty-slide-verify)
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+## install
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-## Quick Start
-
-###  1. Import vue-slide-verify into your vue.js project.
-
-Using build tools:
-
-```bash
+```shell
 npm install --save vue-slide-verify
 ```
 
-```js
-import Vue from 'vue';
-import SlideVerify from 'vue-slide-verify';
-
-Vue.use(SlideVerify);
-```
-
-### 2. Now you have it. The simplest usage:
+## Usage
 
 ```html
-<slide-verify :l="42" :r="10" :w="310" :h="155" @success="onSuccess" @fail="onFail" @refresh="onRefresh"></slide-verify>
-<div>{{msg}}</div>
-```
-
-```js
-export default {
-        name: 'App',
-        data(){
-            return {
-                msg: '',
-            }
-        },
-        methods: {
-            onSuccess(){
-                this.msg = 'login success'
-            },
-            onFail(){
-                this.msg = ''
-            },
-            onRefresh(){
-                this.msg = ''
-            }
+<template>
+    <slide-verify ref="verifyCode" :l="42" :r="10" :w="310" :h="155" @success="onSuccess" @fail="onFail" @refresh="onRefresh"></slide-verify>
+</template>
+<script>
+import Vue from 'vue';
+import SlideVerify from 'vue-slide-verify';
+Vue.use(SlideVerify);//use the plugin
+export default = {
+    //...
+    methods:{
+        onSuccess(){},
+        onFail(){},
+        onRefresh(){},
+        freshVerify(){
+            //refresh slide-verify manually.
+            this.$refs['verifyCode'].refresh();
         }
     }
-```
-
-### Integrate in you project,you shoul import it like this:
-
-```js
-import Vue from 'vue';
-import SlideVerify from 'vue-slide-verify/src/lib';
-
-Vue.use(SlideVerify);
+    //...
+}
+</script>
 ```
 
 ## Document
@@ -81,6 +47,7 @@ Vue.use(SlideVerify);
 |      h      | Number |                                 canvas height                                 |
 |    text     | String |                the tips,default value is 'slide filled right'                 |
 | successText | String |    tips after verifing successfully,defaut value is 'verify successfully'     |
+|  retryText  | String |            tips after verifing defeat,defaut value is 'try again'             |
 |   imgUrl    | String | the url fetching img,default value is 'https://picsum.photos/300/150/?image=' |
 
 ### Events

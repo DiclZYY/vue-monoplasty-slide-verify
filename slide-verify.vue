@@ -59,6 +59,10 @@
                 type:String,
                 default:'Slide filled right',
             },
+            retryText:{
+                type:String,
+                default:'try again',
+            },
             //verify successful text
             successText:{
                 type:String,
@@ -164,7 +168,7 @@
             // 随机生成img src
             getRandomImg() {
                 return this.imgUrl + this.getRandomNumberByRange(0, 1084);
-                // return require('../assets/img.jpg')
+                // return require('./assets/img.jpg')
             },
             getRandomNumberByRange(start, end) {
                 return Math.round(Math.random() * (end - start) + start)
@@ -214,7 +218,7 @@
                             this.$emit('success')
                         } else {
                             this.containerFail = true;
-                            this.sliderText = 'try again'
+                            this.sliderText = this.retryText;
                             this.reset()
                         }
                     } else {
@@ -256,7 +260,7 @@
                         this.$emit('success')
                     } else {
                         this.containerFail = true;
-                        this.sliderText = 'try again'
+                        this.sliderText = this.retryText;
                         this.reset()
                     }
                 } else {
@@ -319,7 +323,7 @@
         width: 34px;
         height: 34px;
         cursor: pointer;
-        background: url("../assets/icon_light.png") 0 -437px;
+        background: url("./assets/icon_light.png") 0 -437px;
         background-size: 34px 471px
     }
 
@@ -370,7 +374,7 @@
         left: 13px;
         width: 14px;
         height: 12px;
-        background: url("../assets/icon_light.png") 0 -26px;
+        background: url("./assets/icon_light.png") 0 -26px;
         background-size: 34px 471px
     }
     .container-active .slide-verify-slider-mask-item {
